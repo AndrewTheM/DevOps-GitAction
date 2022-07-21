@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Run bash script
+        run: |
+          bash 1.sh
+          ls -R 
+        
+      - name: Say my name
+        run: echo "Andrii Makoviichuk"
